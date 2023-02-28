@@ -1,7 +1,7 @@
 import React from "react";
 import {  NavLink } from "react-router-dom";
 import logo from "../../img/logo.png";
-
+import "./Navbar.css";
 const Navbar = () => {
   return (
     <div className="navbar bg-primary text-base-100 sticky top-0 lg:px-10 z-50">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <img src={logo} alt="" className="w-40" />
+        <img src={logo} alt="" className="w-28" />
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

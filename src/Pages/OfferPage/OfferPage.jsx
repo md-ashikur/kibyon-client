@@ -9,7 +9,10 @@ import { Link } from "react-router-dom";
 const OfferPage = () => {
   return (
     <div className="bg-secondary lg:h-screen">
-      <div className="grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-5 text-base-100">
+
+              {/* ***********************************Nos offres section START************************* */}
+
+      <div className="grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-3 text-base-100">
         <div className="flex items-center">
           <div>
             <h1 className="text-5xl font-bold">Nos offres</h1>
@@ -153,6 +156,12 @@ const OfferPage = () => {
           </div>
         </div>
       </div>
+
+      {/* ***********************************Nos offres section END************************* */}
+
+
+
+
     </div>
   );
 };
