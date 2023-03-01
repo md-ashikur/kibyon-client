@@ -37,7 +37,7 @@ const Navbar = () => {
               <NavLink to="/contact">Contact</NavLink>
             </li>
             <li>
-              <NavLink to="">A propos de Kibyon</NavLink>
+              <NavLink to="/propos">A propos de Kibyon</NavLink>
             </li>
           </ul>
         </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
             <NavLink to="/contact">Contact</NavLink>
           </li>
           <li>
-            <NavLink to="">A propos de Kibyon</NavLink>
+            <NavLink to="/propos">A propos de Kibyon</NavLink>
           </li>
         </ul>
       </div>
