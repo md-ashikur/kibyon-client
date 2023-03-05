@@ -100,7 +100,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="border-t bg-primary border- mx-20"></div> 
+      <div className="bg-primary">
+      <div className="border-t mx-20"></div> 
+      </div>
       <footer className="items-center justify-center flex px-10 py-4 bg-primary text-base-100">
         <p>Kibyon © {new Date().getFullYear()} - All Rights Reserved</p>
       </footer>
