@@ -2,8 +2,8 @@ import React from "react";
 
 const LegalPage = () => {
   return (
-    <section className="lg:mx-20 mx-5 my-20 text-justify">
-      <h1 className="text-center text-secondary lg:text-5xl text-3xl font-bold my-10">
+    <section className="lg:mx-20 mx-5 my-28 text-justify">
+      <h1 className="text-center text-secondary lg:text-5xl text-3xl font-bold my-20">
         Conditions générales de vente
       </h1>
       {/* --------------article-1------------ */}
