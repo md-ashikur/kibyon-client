@@ -323,6 +323,7 @@ const LegalPage = () => {
         <p className="font-semibold">contact@kibyon.fr</p>
         <p><span className="font-semibold">Hebergeur :</span> Hostinger  HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre . fr@hostinger.com</p>
       </div>
+      
     </section>
   );
 };

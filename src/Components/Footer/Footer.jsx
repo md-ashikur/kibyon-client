@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { BsInstagram, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
-
-
   return (
     <div className="bg-secondary">
+      <div className="bg-secondary h-10"></div>
+
       <footer className="footer grid lg:grid-cols-5 lg:gap-10 px-20 py-20 bg-primary text-base-100 rounded-tl-[150px]">
         <div>
           <span className="font-semibold mb-5 text-4xl text-secondary">
@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="bg-primary">
-      <div className="border-t mx-20"></div> 
+        <div className="border-t mx-20"></div>
       </div>
       <footer className="items-center justify-center flex px-10 py-4 bg-primary text-base-100">
         <p>Kibyon © {new Date().getFullYear()} - All Rights Reserved</p>
