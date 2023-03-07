@@ -9,7 +9,7 @@ const LegalPage = () => {
       {/* --------------article-1------------ */}
       <div>
         <h2 className="font-bold text-secondary text-2xl my-5">
-          dispositions générales
+        Article 1 : dispositions générales
         </h2>
         <p>
           Les présentes Conditions Générales de Vente de prestations de
@@ -31,7 +31,7 @@ const LegalPage = () => {
       {/* --------------article-2------------ */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          Nature des prestations
+        Article 2 : Nature des prestations
         </h2>
         <p>
           Le cabinet de conseil en stratégie d’entreprise Kibyon accompagne les
@@ -47,7 +47,7 @@ const LegalPage = () => {
 
       {/* --------------article-3------------ */}
       <div className="my-10">
-        <h2 className="font-bold text-secondary text-2xl my-5">prix</h2>
+        <h2 className="font-bold text-secondary text-2xl my-5">Article 3 : prix</h2>
         <p>
           Les prix des services sont ceux détaillés dans les propositions
           commerciales ou contrats, acceptés par le client. Ils sont exprimés en
@@ -66,7 +66,7 @@ const LegalPage = () => {
       {/* --------------article-4------------ */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          proposition commerciale et contrat
+        Article 4 : proposition commerciale et contrat
         </h2>
         <p className="font-semibold mb-5">
           Toutes prestations interviennent à la suite de la demande du client et
@@ -102,7 +102,7 @@ const LegalPage = () => {
       </div>
       {/* ------------article-5----------- */}
       <div>
-        <h2 className="font-bold text-secondary text-2xl my-5">Escompte</h2>
+        <h2 className="font-bold text-secondary text-2xl my-5">Article 5 : Escompte</h2>
         <p className="">
           Aucun escompte ne sera consenti en cas de paiement anticipé.
         </p>
@@ -111,7 +111,7 @@ const LegalPage = () => {
       {/* ------------article-6----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          Modalités paiement
+        Article 6 : Modalités paiement
         </h2>
         <p className="my-5">
           Le règlement des commandes s'effectue par virement bancaire
@@ -128,7 +128,7 @@ const LegalPage = () => {
       {/* ------------article-7----------- */}
       <div>
         <h2 className="font-bold text-secondary text-2xl my-5">
-          retard de paiement
+        Article 7 : retard de paiement
         </h2>
         <p className="mb-5">
           Tout retard de paiement entrainera le droit d’exigibilité immédiate de
@@ -159,7 +159,7 @@ const LegalPage = () => {
       {/* ------------article-8----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          Clause résolutoire
+        Article 8 : Clause résolutoire
         </h2>
         <p className="">
           Si dans les quinze jours qui suivent la mise en œuvre de la clause
@@ -171,7 +171,7 @@ const LegalPage = () => {
       {/* ------------article-9----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          durée et résiliation
+        Article 9 : durée et résiliation
         </h2>
         <p className="my-5">
           La durée des prestations est définie dans la proposition commerciale
@@ -209,7 +209,7 @@ const LegalPage = () => {
       {/* ------------article-10----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          Force majeure
+        Article 10 : Force majeure
         </h2>
         <p className="my-5">
           La responsabilité du prestataire ne pourra pas être mise en œuvre si
@@ -229,7 +229,7 @@ const LegalPage = () => {
       {/* ------------article-11----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5 text-left ">
-          obligation et responsabilités
+        Article 11 : obligation et responsabilités
         </h2>
         <p className="my-5 font-semibold">Le prestataire s’engage à :</p>
         <ul class="marker:text-black list-disc pl-5 lg:space-y-3 space-y-1 mx-5 mb-5">
@@ -302,7 +302,7 @@ const LegalPage = () => {
       {/* ------------article-12----------- */}
       <div className="my-10">
         <h2 className="font-bold text-secondary text-2xl my-5">
-          Tribunal compétent
+        Article 12 : Tribunal compétent
         </h2>
         <p className="my-5">
           Tout litige relatif à l'interprétation et à l'exécution des présentes
@@ -321,7 +321,7 @@ const LegalPage = () => {
         <p>Kibyon (E.I) détenu par Geoffrey THUILLIER, 71 route de la prieurée, 45110 Germigny-des-prés.</p>
         <p className="font-semibold">N° Siren : 912 667 995</p>
         <p className="font-semibold">contact@kibyon.fr</p>
-        <p><span className="font-semibold">Hebergeur :</span> Hostinger  HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre . fr@hostinger.com</p>
+        <p><span className="font-semibold">Hebergeur :</span> HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre. fr@hostinger.com</p>
       </div>
       
     </section>
