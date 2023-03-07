@@ -67,6 +67,12 @@ const Footer = () => {
           >
             A propos de Kibyon
           </Link>
+          <Link
+            to="/legal"
+            className="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
+          >
+            mentions légales
+          </Link>
         </div>
         <div className="lg:col-span-2">
           <span className="font-semibold mb-5 text-xl text-secondary">
