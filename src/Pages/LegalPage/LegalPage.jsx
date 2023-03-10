@@ -8,7 +8,7 @@ const LegalPage = () => {
       </h1>
       {/* --------------article-1------------ */}
       <div>
-        <h2 className="font-bold text-secondary text-2xl my-5">
+        <h2 className="font-bold text-secondary lg:text-2xl my-5">
         Article 1 : dispositions générales
         </h2>
         <p>

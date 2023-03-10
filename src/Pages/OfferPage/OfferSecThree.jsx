@@ -1,21 +1,51 @@
-import React from "react";
-import marketStudy from "../../Videos/Market study.mp4";
+import React, { useEffect } from "react";
+import video from "../../Videos/Prévi VF (2023).mp4";
 
 const OfferSecThree = () => {
+  useEffect(() => {
+    let $spacer = document.querySelector(".spacer");
+    let $video = document.querySelector(".video");
+
+    // The height of the spacer element
+    let spacerHeight = $spacer.clientHeight;
+    // the height of the viewport
+    let viewportHeight =
+      document.documentElement.getBoundingClientRect().height;
+
+    // We can get the total scrollable height be subtracting the spacer element's height by the viewport height
+    let scrollableHeight = spacerHeight - viewportHeight;
+    // Get the full duration of the video
+    let videoDuration;
+    // Keep track the video's playtime
+    let currentTime = 0;
+
+    // The scroll event handler
+    function handleScrollEvent(event) {
+      // Here we sync the y position of the scrollbar to the progress of the video
+      currentTime = (window.scrollY * videoDuration) / scrollableHeight;
+      $video.currentTime = currentTime;
+    }
+
+    // Loaded Data handler, that is, the function that runs after the video is ready to play
+    function handleLoadedData(event) {
+      // Get the full video duration
+      videoDuration = $video.duration;
+      // Do stuff when user scrolls
+      window.addEventListener("scroll", handleScrollEvent);
+    }
+
+    // Do stuff when the video is ready to play
+    $video.addEventListener("loadeddata", handleLoadedData);
+  }, []);
+
   return (
     <div>
-      <section className="relative lg:py-20 lg:h-[600px] overflow-hidden">
-        {/* ========================1st part=================== */}
-        <div className="">
-          <video autoplay muted loop id="myVideo" className="w-full">
-            <source src={marketStudy} type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
+      <section className="relative lg:py-20 lg:h-[13500px] overflow-hidden">
+        {/* ================•	Appear frame 0===1st part=================== */}
 
-        <div className="content py-16 ">
-          <div className="my-10 lg:px-20">
-            <h1 className="text-5xl text-center font-bold text-base-100">
+        <div className="content py-16 z-20">
+          <div className="my-10 lg:px-20 w-[50%]">
+            <h1 className="text-4xl text-left font-bold text-base-100">
               Qu’est-ce qu’un prévisionnel financier ?
             </h1>
             <div className="my-10 text-justify text-base-100">
@@ -30,10 +60,10 @@ const OfferSecThree = () => {
             </div>
           </div>
 
-          {/* =====================2nd part=========================== */}
+          {/* ===============•	Appear frame 300======2nd part=========================== */}
 
-          <div className="my-20 lg:px-20">
-            <h1 className="text-5xl text-center font-bold text-base-100">
+          <div className="mt-[1300px] lg:px-20">
+            <h1 className="text-4xl text-center font-bold text-base-100">
               Pourquoi ne faire qu’un prévisionnel financier ?
             </h1>
             <div className="my-10 text-justify text-base-100">
@@ -66,14 +96,14 @@ const OfferSecThree = () => {
             </div>
           </div>
 
-          {/* =======================3rd part================================== */}
+          {/* =============•	Appear frame 530==========3rd part================================== */}
 
-          <div className="lg:px-20">
+          <div className="lg:px-20 mt-[800px] w-[70%]">
             <h1 className="text-3xl font-bold text-base-100">
               Comment cela va -t-il se dérouler ?
             </h1>
             <div className="my-10 text-justify text-base-100">
-              <ul class="marker:text-base-100 list-disc pl-5 space-y-3 text-base-100">
+              <ul className="marker:text-base-100 list-disc pl-5 space-y-3 text-base-100">
                 <li>
                   1 échange téléphonique pour bien comprendre votre projet
                 </li>
@@ -96,10 +126,10 @@ const OfferSecThree = () => {
             </div>
           </div>
 
-          {/* =====================4th part=========================== */}
+          {/* =============•	Appear frame 1100========4th part=========================== */}
 
-          <div className="my-20 lg:px-20">
-            <h1 className="text-5xl text-center font-bold text-base-100">
+          <div className="mb-20 pt-[4000px] lg:px-20">
+            <h1 className="text-4xl text-center font-bold text-base-100">
               Avec Kibyon, gardez un œil sur l’avenir !
             </h1>
             <div className="my-10 text-justify text-base-100">
@@ -119,6 +149,14 @@ const OfferSecThree = () => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="">
+          <div className="spacer"></div>
+
+          <video className="video">
+            <source src={video} type="video/mp4" />
+          </video>
+          
         </div>
       </section>
     </div>

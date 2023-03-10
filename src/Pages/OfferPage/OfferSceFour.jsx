@@ -49,7 +49,7 @@ const OfferSceFour = () => {
     });
   }, []);
   return (
-    <div className=" overflow-hidden">
+    <div className=" overflow-hidden ">
       <div className="relative">
         <div className="absolute lg:top-10 z-10 grid grid-cols-2 gap-5 lg:px-20 px-3 text-base-100 lg:py-20">
           <div>

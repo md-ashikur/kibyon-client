@@ -8,17 +8,46 @@ import marketStudy from "../../Videos/Market study.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 const OfferSecTwo = () => {
+  useEffect(() => {
+    let $spacer = document.querySelector(".spacer");
+    let $marketStudy = document.querySelector(".video");
 
+    // The height of the spacer element
+    let spacerHeight = $spacer.clientHeight;
+    // the height of the viewport
+    let viewportHeight =
+      document.documentElement.getBoundingClientRect().height;
+
+    // We can get the total scrollable height be subtracting the spacer element's height by the viewport height
+    let scrollableHeight = spacerHeight - viewportHeight;
+    // Get the full duration of the video
+    let videoDuration;
+    // Keep track the video's playtime
+    let currentTime = 0;
+
+    // The scroll event handler
+    function handleScrollEvent(event) {
+      // Here we sync the y position of the scrollbar to the progress of the video
+      currentTime = (window.scrollY * videoDuration) / scrollableHeight;
+      $marketStudy.currentTime = currentTime;
+    }
+
+    // Loaded Data handler, that is, the function that runs after the video is ready to play
+    function handleLoadedData(event) {
+      // Get the full video duration
+      videoDuration = $marketStudy.duration;
+      // Do stuff when user scrolls
+      window.addEventListener("scroll", handleScrollEvent);
+    }
+
+    // Do stuff when the video is ready to play
+    $marketStudy.addEventListener("loadeddata", handleLoadedData);
+  }, []);
   return (
     <div>
-         <section className="relative mt-10 h-[600px] overflow-hidden">
+         <section className="relative my-10 h-[60px] z-10 overflow-hidden">
         {/* ========================1st part=================== */}
-        <div className="">
-          <video autoplay muted loop id="myVideo" className="w-full">
-            <source src={marketStudy} type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
+       
 
         <div className="content lg:py-16 ">
           <div className="lg:my-10 lg:px-20">
@@ -99,6 +128,13 @@ const OfferSecTwo = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="">
+          <div class="spacer"></div>
+
+          <video class="marketStudy">
+            <source src={marketStudy} type="video/mp4" />
+          </video>
         </div>
       </section>
     </div>
