@@ -19,7 +19,7 @@ const OfferPage = () => {
     <div className="bg-secondary lg:h-auto">
       {/* ****************************Section-1**********Nos offres section START************************* */}
 
-      <section className="z-10 bg-secondary  relative grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-10 text-base-100">
+      <section className="z-10 bg-secondary h-screen  relative grid lg:grid-cols-2 gap-3 lg:px-20 px-5 py-10 text-base-100">
         <div className="flex items-center">
           <div>
             <h1 className="text-5xl font-bold">Nos offres</h1>

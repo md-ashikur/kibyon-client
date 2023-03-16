@@ -64,7 +64,7 @@ const OfferSecThree = () => {
 
           <div className="mt-[1300px] lg:px-20">
             <h1 className="text-4xl text-center font-bold text-base-100">
-              Pourquoi ne faire qu’un prévisionnel financier ?
+            Pourquoi faire un prévisionnel financier ?
             </h1>
             <div className="my-10 text-justify text-base-100">
               <p className="my-5">

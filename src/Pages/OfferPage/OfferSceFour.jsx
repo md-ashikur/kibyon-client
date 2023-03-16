@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import imgSrc from "../../img/Business plan/BP - Block 1 & 2 (original).png";
+import imgSrc from "../../img/Business plan/BP - Block 1 & 2 (resize).png";
 import block3 from "../../img/Business plan/BP - Block 3 (original).png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +16,7 @@ const OfferSceFour = () => {
 
     gsap.to(imgElement, {
       yPercent: -10,
-      scale: 1.7,
+      scale: 1.9,
       ease: "none",
       scrollTrigger: {
         trigger: parallaxElement,
