@@ -513,8 +513,8 @@ const Accueil = () => {
         {/* =============Logo============ */}
         <Canvas className=" absolute lg:top-96"  camera={{ fov: 20, position: [0, 20, 0] }}>
           <Suspense fallback={null}>
-            <directionalLight position={[3, 10, 6]}/>
-            <pointLight position={[3, 10, 6]} />
+            <directionalLight position={[3, 5, 2]}/>
+            <pointLight position={[3, 2, 2]} />
             <OrbitControls enableZoom={false} maxPolarAngle={0} minPolarAngle={1.6}/>
             <Logo position={[0, 0, 0]} />
           </Suspense>
