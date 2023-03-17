@@ -1,3 +1,10 @@
+
+
+.bgPic{
+  background-image: url(../../img/Background.png);
+  background-size: cover;
+}
+
 .flip-card {
     background-color: transparent;
     min-width: 220px;

@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsInstagram, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
+import "./Footer.css"
+
 
 const Footer = () => {
   return (
-    <div className="bg-secondary relative">
-      <div className="bg-secondary h-10"></div>
+    <div className="footerbg1 relative">
+      <div className="footerbg h-5"></div>
 
       <footer className="footer grid lg:grid-cols-5 lg:gap-10 px-20 py-20 bg-primary text-base-100 rounded-tl-[150px]">
         <div>

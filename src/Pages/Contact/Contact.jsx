@@ -14,7 +14,7 @@ const Contact = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="bg-secondary lg:h-auto relative py-10">
+    <div className=" bgPic lg:h-auto relative py-10">
       <div className="text-center flex  items-center flex-col text-base-100">
         <h1 className="lg:text-5xl text-3xl font-bold py-3">Contactez-nous</h1>
         <p className="p-3 max-w-[800px]">

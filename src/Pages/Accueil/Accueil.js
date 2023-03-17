@@ -3,6 +3,7 @@ import React, { Suspense, useRef } from "react";
 import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import "./Accueil.css";
 import welcomeBg from "../../img/intro welcome page background.png";
+import WSecTwo from "./WelcomeSecTwo/WSecTwo";
 
 
 // =========shoes================
@@ -35,56 +36,30 @@ function Shoes(props) {
 }
 
 // =================plane======================
-// function Plane(props) {
-//   const group = useRef();
-//   const { nodes, materials, animations } = useGLTF("/Plane.glb");
-//   const { actions } = useAnimations(animations, group);
-//   return (
-//     <group ref={group} {...props} dispose={null}>
-//       <group name="Studio_limbo_3_point_lighting_2x2x2">
-//         <group name="Jet_03" position={[3.4, -5.76, -51.38]}>
-//           <mesh
-//             name="Jet_Flame_mesh_Icosphere"
-//             geometry={nodes.Jet_Flame_mesh_Icosphere.geometry}
-//             material={materials["Flame fire material 2.001"]}
-//             position={[-6.3, 5.95, 51.52]}
-//             scale={0.02}
-//           />
-//         </group>
-//         <group name="Jet_03002" position={[3.4, -5.76, -51.21]}>
-//           <mesh
-//             name="Jet_Flame_mesh_Icosphere001"
-//             geometry={nodes.Jet_Flame_mesh_Icosphere001.geometry}
-//             material={materials["Flame fire material 2.002"]}
-//             position={[-6.31, 5.95, 51.49]}
-//             scale={0.02}
-//           />
-//         </group>
-//         <mesh
-//           name="Plane_With_Raised_Wings_Plane001"
-//           geometry={nodes.Plane_With_Raised_Wings_Plane001.geometry}
-//           material={materials.Paper}
-//           position={[-2.6, 0.22, 0.79]}
-//           rotation={[Math.PI / 2, 0, -1.57]}
-//           scale={0.2}
-//         />
-//         <mesh
-//           name="Text"
-//           geometry={nodes.Text.geometry}
-//           material={materials["Material.005"]}
-//           position={[-2.9, 0.23, 0.36]}
-//           rotation={[2.3, -0.08, 0.02]}
-//           scale={0.03}
-//         />
-//       </group>
-//     </group>
-//   );
-// }
+function Plane(props) {
+  const group = useRef()
+  const { nodes, materials, animations } = useGLTF('/Models/Plane.glb')
+  const { actions } = useAnimations(animations, group)
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group name="Studio_limbo_3_point_lighting_2x2x2">
+        <group name="Jet_03" position={[3.4, -5.76, -51.38]}>
+          <mesh name="Jet_Flame_mesh_Icosphere" geometry={nodes.Jet_Flame_mesh_Icosphere.geometry} material={materials['Flame fire material 2.001']} position={[-6.3, 5.95, 51.52]} scale={0.02} />
+        </group>
+        <group name="Jet_03002" position={[3.4, -5.76, -51.21]}>
+          <mesh name="Jet_Flame_mesh_Icosphere001" geometry={nodes.Jet_Flame_mesh_Icosphere001.geometry} material={materials['Flame fire material 2.002']} position={[-6.31, 5.95, 51.49]} scale={0.02} />
+        </group>
+        <mesh name="Plane_With_Raised_Wings_Plane001" geometry={nodes.Plane_With_Raised_Wings_Plane001.geometry} material={materials.Paper} position={[-2.6, 0.22, 0.79]} rotation={[Math.PI / 2, 0, -1.57]} scale={0.2} />
+        <mesh name="Text" geometry={nodes.Text.geometry} material={materials['Material.005']} position={[-2.9, 0.23, 0.36]} rotation={[2.3, -0.08, 0.02]} scale={0.03} />
+      </group>
+    </group>
+  )
+}
 
 // =================logo=================
 
 function Logo(props) {
-  const { nodes, materials } = useGLTF('/LogoKibyon.glb')
+  const { nodes, materials } = useGLTF('/Models/LogoKibyon.glb')
   return (
     <group {...props} dispose={null}  >
       <mesh geometry={nodes.Round_Cube.geometry} material={materials.Apple_Voice_Memos} rotation={[0, 1.57, 0]} scale={[1.26, 2.74, 2.74]} />
@@ -133,7 +108,7 @@ function Hand(props) {
 
 // ===========Maps=================
 function Maps(props) {
-  const { nodes, materials } = useGLTF("/Maps.glb");
+  const { nodes, materials } = useGLTF("/Models/Maps.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -504,13 +479,14 @@ const Accueil = () => {
 
 
   return (
-    <div className=" relative ">
+    <div className=" ">
+      <section className="relative overflow-hidden">
       <div className="h-screen w-full -mt-9">
         <img src={welcomeBg} alt="" />
       </div>
 
 
-      <div className="flex justify-center absolute top-20 left-28 z-1">
+      <div className="flex justify-center absolute top-3 left-5 z-1">
 
         {/* ===========shoes============= */}
         <Canvas camera={{ fov: 50, position: [0, 0, 14] }} className=" absolute lg:top-96">
@@ -523,14 +499,14 @@ const Accueil = () => {
         </Canvas>
 
         {/* =============plane============ */}
-        {/* <Canvas className=" absolute lg:top-52 lg:left-[100%]" camera={{ fov: 50, position: [1, 0, 10] }}>
+        <Canvas className=" absolute lg:top-52 lg:left-[100%]" camera={{ fov: 70, position: [1, 0, 10] }}>
           <Suspense fallback={null}>
           <directionalLight position={[3, 10, 6]}/>
             <pointLight position={[3, 10, 6]} />
             <OrbitControls enableZoom={false} maxPolarAngle={0} minPolarAngle={1}/>
             <Plane />
           </Suspense>
-        </Canvas> */}
+        </Canvas>
 
 
 
@@ -551,7 +527,7 @@ const Accueil = () => {
 
         <Canvas
           camera={{ fov: 40, position: [1, 0, 4] }}
-          className=" absolute lg:top-96 lg:-left-[10%]"
+          className=" absolute lg:top-96 lg:-left-[5%]"
         >
           <Suspense fallback={null}>
             <ambientLight/>
@@ -574,6 +550,11 @@ const Accueil = () => {
 
       
       </div>
+      </section>
+
+      <section>
+        <WSecTwo/>
+      </section>
     </div>
   );
 };
