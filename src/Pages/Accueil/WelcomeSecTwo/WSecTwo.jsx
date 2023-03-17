@@ -10,7 +10,7 @@ const WSecTwo = () => {
     <div className=" relative">
       <div className="bg-primary h-52 text-center flex justify-center ">
      
-        <h1 className="lg:w-[70%] pt-28 px-5 lg:text-4xl text-secondary font-semibold ">
+        <h1 className="lg:w-[70%] pt-28 px-5 lg:text-4xl text-base-100 font-semibold ">
           Et si nous mettions nos compétences au service du plus grand
           nombre ?
         </h1>
@@ -29,7 +29,7 @@ const WSecTwo = () => {
 
 
       <div className="bg-primary px-20 pb-20 pt-20 lg:pt-0">
-        <div className="grid lg:grid-cols-4 gap-8 text-justify  text-base-100">
+        <div className="grid lg:grid-cols-1 gap-8 text-justify  text-base-100">
           <p>
             Ce qui nous anime et ce qui fait l’ADN de ce cabinet, c’est
             d’accompagner les chefs d’entreprises et de prendre toute notre part
