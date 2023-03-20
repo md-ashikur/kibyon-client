@@ -4,6 +4,7 @@ import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import "./Accueil.css";
 import welcomeBg from "../../img/intro welcome page background.png";
 import WSecTwo from "./WelcomeSecTwo/WSecTwo";
+import WSecThree from "./WSceThree/WSecThree";
 
 
 // =========shoes================
@@ -482,38 +483,39 @@ const Accueil = () => {
     <div className=" ">
       <section className="relative overflow-hidden">
       <div className="h-screen w-full -mt-9">
-        <img src={welcomeBg} alt="" />
+        <img src={welcomeBg} alt="" draggable={false} />
       </div>
 
 
       <div className="flex justify-center absolute top-3 left-5 z-1">
 
         {/* ===========shoes============= */}
-        <Canvas camera={{ fov: 50, position: [0, 0, 14] }} className=" absolute lg:top-96">
+        <Canvas camera={{ fov: 50, position: [0, 0, 14] }} className=" absolute lg:top-72  left-20">
           <Suspense fallback={null}>
           <directionalLight position={[3, 10, 3]}/>
             <pointLight position={[3, 10, 3]} />
-            <OrbitControls enableZoom={false} maxPolarAngle={0} minPolarAngle={1}/>
-          <Shoes  position={[3, -1, 0]}/>
+            <OrbitControls enableZoom={false} maxAzimuthAngle={0} minAzimuthAngle={0}  maxPolarAngle={0} minPolarAngle={1}/>
+          <Shoes scale={1.2} position={[2.7, -1, 0]}/>
           </Suspense>
         </Canvas>
 
         {/* =============plane============ */}
-        <Canvas className=" absolute lg:top-52 lg:left-[100%]" camera={{ fov: 70, position: [1, 0, 10] }}>
+        <Canvas className="absolute lg:top-0 !h-screen" camera={{ fov: 30, position: [1, 2, 10] }}>
           <Suspense fallback={null}>
-          <directionalLight position={[3, 10, 6]}/>
-            <pointLight position={[3, 10, 6]} />
-            <OrbitControls enableZoom={false} maxPolarAngle={0} minPolarAngle={1}/>
-            <Plane />
+         <ambientLight/>
+          <directionalLight position={[3, 10, 3]}/>
+            <pointLight position={[3, 1, 6]} />
+            <OrbitControls enableZoom={true} maxPolarAngle={0} minPolarAngle={1}/>
+            <Plane position={[-0, -1, 0]}/>
           </Suspense>
         </Canvas>
 
 
 
         {/* =============Logo============ */}
-        <Canvas className=" absolute lg:top-96"  camera={{ fov: 20, position: [0, 20, 0] }}>
+        <Canvas className=" absolute lg:top-32 !h-screen"  camera={{ fov: 50, position: [0, 20, 0] }}>
           <Suspense fallback={null}>
-            <directionalLight position={[3, 5, 2]}/>
+            <directionalLight position={[3, 5, 2]} />
             <pointLight position={[3, 2, 2]} />
             <OrbitControls enableZoom={false} maxPolarAngle={0} minPolarAngle={1.6}/>
             <Logo position={[0, 0, 0]} />
@@ -527,7 +529,7 @@ const Accueil = () => {
 
         <Canvas
           camera={{ fov: 40, position: [1, 0, 4] }}
-          className=" absolute lg:top-96 lg:-left-[5%]"
+          className=" absolute lg:top-72 lg:-left-[5%]"
         >
           <Suspense fallback={null}>
             <ambientLight/>
@@ -555,6 +557,8 @@ const Accueil = () => {
       <section>
         <WSecTwo/>
       </section>
+
+      <WSecThree/>
     </div>
   );
 };

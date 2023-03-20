@@ -50,31 +50,40 @@ const OfferSceFour = () => {
   }, []);
   return (
     <div className=" overflow-hidden ">
-      <div className="relative">
-        <div className="absolute lg:top-10 z-10 grid grid-cols-2 gap-5 lg:px-20 px-3 text-base-100 lg:py-20">
-          <div>
-            <h2 className="lg:text-2xl font-semibold text-secondary">
-              Qu’est-ce qu’un Business plan ?
-            </h2>
-            <p className="hidden lg:block lg:text-base  text-xs text-base-100 border-2 border-secondary lg:mt-[185%] p-3 lg:mr-20 text-justify">
-              Contrairement aux idées reçues, on ne fait pas un business plan
-              uniquement dans le cadre d’une création d’entreprise mais
-              également pour tout projet nouveau au sein de cette dernière. Un
-              business plan adapté est de mise pour traduire les projections de
-              développement et démontrer la cohérence de votre stratégie à 360°
-              (R.H, finance, marketing…) quant aux objectifs et à la rentabilité
-              du projet. Il s’agit à la fois d’apporter de la clarté dans votre
-              projet, savoir précisément dans quelle direction vous allez et de
-              quelle façon.
-            </p>
-          </div>
 
-          <div>
-            <h2 className="lg:text-2xl font-semibold text-secondary text-right">
+
+      {/* =========1st block========= */}
+      <div className="relative text-base-100 bg-primary py-28 lg:h-[250vh] h-[150vh] ">
+        <div className="flex justify-center mt-72">
+          <div ref={parallaxRef} className="lg:w-[60%] overflow-hidden rounded-lg mx-5">
+            <img src={imgSrc} alt="" className="w-full" />
+          </div>
+        </div>
+
+{/* ---------top text block-------- */}
+        <div className="card p-8 absolute lg:top-32 top-10 mx-5 lg:left-20 lg:w-[50%] border border-secondary">
+          <h2 className="lg:text-2xl font-bold my-5">
+            Qu’est-ce qu’un Business plan ?
+          </h2>
+          <p className=" lg:block lg:text-base  text-xs text-justify">
+            Contrairement aux idées reçues, on ne fait pas un business plan
+            uniquement dans le cadre d’une création d’entreprise mais également
+            pour tout projet nouveau au sein de cette dernière. Un business plan
+            adapté est de mise pour traduire les projections de développement et
+            démontrer la cohérence de votre stratégie à 360° (R.H, finance,
+            marketing…) quant aux objectifs et à la rentabilité du projet. Il
+            s’agit à la fois d’apporter de la clarté dans votre projet, savoir
+            précisément dans quelle direction vous allez et de quelle façon.
+          </p>
+        </div>
+{/* ----------bottom text- block----------- */}
+        <div className="py-20">
+          <div className="card p-8 absolute mx-5 lg:bottom-20 bottom-10 lg:right-28 lg:w-[50%] border border-secondary">
+            <h2 className="lg:text-2xl font-bold my-5 ">
               Pourquoi faire un Business plan ?
             </h2>
 
-            <div className="hidden lg:block lg:text-base text-xs border-2 border-secondary p-3 lg:mt-[176%] ">
+            <div className="lg:block lg:text-base text-xs">
               <p className="text-justify">
                 Réaliser un business plan est avant tout primordial pour vous
                 permettre de valider la viabilité de votre projet et de vous
@@ -96,13 +105,6 @@ const OfferSceFour = () => {
             </div>
           </div>
         </div>
-
-        <div className="absolute left-40 top-40 border-l border-secondary bg-red-500 lg:h-[1080px] z-10"></div>
-        <div className="absolute right-40 top-40 border-l border-secondary bg-red-500 lg:h-[1025px] z-10"></div>
-
-        <div ref={parallaxRef}>
-          <img src={imgSrc} alt="" className="w-full" />
-        </div>
       </div>
 
       {/* for mobile======================== */}
@@ -110,53 +112,50 @@ const OfferSceFour = () => {
       {/* for mobile end============================== */}
 
       {/* ==================2ND BLOCK===================================== */}
-      <div className="relative top-0 ">
-      <div className="">
-        <div className="relative  px-3 text-base-100 lg:my-20 lg:pb-16 pb-3">
-          <div className="absolute z-10 lg:top-52 right-0 lg:mx-20 mx-3">
-            <h2 className="lg:text-2xl text-xl font-semibold text-secondary mt-5">
-              Comment cela va-t-il se dérouler ?
-            </h2>
-            <div className="border border-secondary p-3 text-justify lg:mx-2 text-base-100 lg:mt-[75%] lg:text-base text-xs">
-              <ul class="marker:text-base-100 list-disc pl-5 lg:space-y-3 space-y-1 text-base-100">
-                <li>
-                  1 échange téléphonique pour bien comprendre votre projet
-                </li>
-                <li>
-                  Collecte des éléments disponibles du projet et collaboration
-                  pour obtenir les éléments manquants.
-                </li>
-                <li>1 proposition commerciale adaptée à votre besoin</li>
-                <li>
-                  Entretiens de travail de plusieurs heures pour structurer le
-                  projet et définir les lignes directrices.
-                </li>
-                <li>
-                  Plusieurs échanges complémentaires au fil de la mission pour
-                  préciser le projet et réfléchir ensemble aux meilleurs choix
-                  pour vous.
-                </li>
-                <li>
-                  Livrable du business plan en pdf et Powerpoint avec accès au
-                  fichier source, contenant entre autres : présentation du
-                  projet et des fondateurs, étude de marché, prévisionnel
-                  financier, explication de la stratégie etc.
-                </li>
-                <li>
-                  Présentation du business plan et prise en main avec le client
-                  pour pouvoir être totalement indépendant et autonome.
-                </li>
-              </ul>
-            </div>
+      <div className="relative bg-primary lg:px-20 px-5 py-28">
+        <div className="grid lg:grid-cols-2 gap-5">
+
+          <div ref={parallaxRefTwo} className="w- overflow-hidden rounded-2xl">
+            <img src={block3} alt="" className="w-full" />
           </div>
-        </div>
 
-        <div className="absolute lg:left-40 top-64 border-l border-secondary lg:h-[900px] z-10"></div>
-
-        <div ref={parallaxRefTwo} >
-          <img src={block3} alt="" className="w-full" />
+          <div className="p-5 card border border-secondary">
+              <h2 className="lg:text-2xl text-xl font-bold text-secondary my-5">
+                Comment cela va-t-il se dérouler ?
+              </h2>
+              <div className=" text-justify lg:mx-2 text-base-100  lg:text-base text-xs">
+                <ul class="marker:text-base-100 list-disc pl-5 lg:space-y-3 space-y-1 text-base-100">
+                  <li>
+                    1 échange téléphonique pour bien comprendre votre projet
+                  </li>
+                  <li>
+                    Collecte des éléments disponibles du projet et collaboration
+                    pour obtenir les éléments manquants.
+                  </li>
+                  <li>1 proposition commerciale adaptée à votre besoin</li>
+                  <li>
+                    Entretiens de travail de plusieurs heures pour structurer le
+                    projet et définir les lignes directrices.
+                  </li>
+                  <li>
+                    Plusieurs échanges complémentaires au fil de la mission pour
+                    préciser le projet et réfléchir ensemble aux meilleurs choix
+                    pour vous.
+                  </li>
+                  <li>
+                    Livrable du business plan en pdf et Powerpoint avec accès au
+                    fichier source, contenant entre autres : présentation du
+                    projet et des fondateurs, étude de marché, prévisionnel
+                    financier, explication de la stratégie etc.
+                  </li>
+                  <li>
+                    Présentation du business plan et prise en main avec le
+                    client pour pouvoir être totalement indépendant et autonome.
+                  </li>
+                </ul>
+              </div>
+            </div>
         </div>
-      </div>
       </div>
     </div>
   );
