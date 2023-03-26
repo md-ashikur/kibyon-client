@@ -1,21 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
+import Wave from "react-wavify";
 import kibyonText from "../../../img/Welcome page/kt.png";
 import kibyonBg from "../../../img/Welcome page/Untitled-1.jpg";
 
 import "./WSecTwo.css";
 
 const WSecTwo = () => {
-  const [cursorX, setCursorX] = useState();
-  const [cursorY, setCursorY] = useState();
 
-  window.addEventListener("mousemove", (e) => {
-    setCursorX(e.pageX);
-    setCursorY(e.pageY);
-  });
+  useEffect(() => {
+    const cursor = document.getElementById("cursor");
+
+    const tip = document.getElementById("tip");
+    
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = e.pageY + "px";
+      cursor.style.left = e.pageX + "px";
+      
+      tip.style.display = "none";
+    });
+  },[])
+ 
 
   return (
     <div className=" relative">
+         <Wave
+            className="-mb-5"
+            fill="black"
+            paused={false}
+            options={{
+              height: 20,
+              amplitude: 40,
+              speed: 0.15,
+              points: 5,
+            }}
+          />
       <div className="bg-primary h-52 text-center flex justify-center ">
         <h1 className="lg:w-[70%] pt-28 px-5 lg:text-4xl text-base-100 font-semibold ">
           Et si nous mettions nos compétences au service du plus grand nombre ?
@@ -32,9 +51,10 @@ const WSecTwo = () => {
         </ParallaxBanner>
       </ParallaxProvider>
 
-      <div className="bg-primary px-20 pb-20 pt-20 lg:pt-0">
+      <div className="bg-primary lg:px-20 pb-20 pt-20 lg:pt-0" >
+   
         <div className="relative title rowInverse grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
-          <div className="grid  grid-cols-2 gap-5">
+          <div className="grid  lg:grid-cols-2 gap-5">
             <p className="p-5 inverseCol">
               Ce qui nous anime et ce qui fait l’ADN de ce cabinet, c’est
               d’accompagner les chefs d’entreprises et de prendre toute notre
@@ -51,7 +71,7 @@ const WSecTwo = () => {
               et une forte appétence pour la recherche académique.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid lg:grid-cols-2 gap-5">
             <p className="p-5">
               L’objectif est de donner un autre regard aux dirigeants, en nous
               basant sur des faits et une connaissance accrue de votre
@@ -72,16 +92,13 @@ const WSecTwo = () => {
               actuels et futurs
             </p>
           </div>
-          <div
-            className="curso"
-           
-          ></div>
+        
         </div>
       </div>
 
 
 
-
+  
     </div>
   );
 };

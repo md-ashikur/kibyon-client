@@ -3,8 +3,9 @@ import { useGLTF } from "@react-three/drei";
 export function Maps(props) {
     const { nodes, materials } = useGLTF("/Models/Maps.glb");
     return (
-      <group {...props} dispose={null}>
+      <group {...props} dispose={null} >
         <mesh
+        castShadow
           geometry={nodes.Plane.geometry}
           material={nodes.Plane.material}
           rotation={[0, -0.09, 0]}
@@ -163,7 +164,7 @@ export function Maps(props) {
               material={materials.Window}
             />
           </group>
-          <mesh
+          <mesh castShadow
             geometry={nodes.Circle009.geometry}
             material={nodes.Circle009.material}
             position={[0, 1.14, 0]}
@@ -353,6 +354,7 @@ export function Maps(props) {
           scale={0}
         />
         <mesh
+        castShadow
           geometry={nodes.Snow013.geometry}
           material={materials.Snow}
           position={[0.46, 0.22, 0.95]}
