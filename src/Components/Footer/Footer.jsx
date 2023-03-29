@@ -46,7 +46,7 @@ const Footer = () => {
             Navigation
           </span>
           <Link
-            to=""
+            to="/"
             className="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
           >
             Accueil
@@ -58,13 +58,13 @@ const Footer = () => {
             Nos offres
           </Link>
           <Link
-            to=""
+            to="/contact"
             className="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
           >
             Contact
           </Link>
           <Link
-            to=""
+            to="/about"
             className="hover:scale-110 hover:pl-5 duration-150 hover:text-secondary"
           >
             A propos de Kibyon

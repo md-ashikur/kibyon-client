@@ -16,22 +16,22 @@ const Contact = () => {
   return (
     <div className=" bgPic lg:h-auto relative py-10">
       <div className="text-center flex  items-center flex-col text-base-100">
-        <h1 className="lg:text-5xl text-3xl font-bold py-3">Contactez-nous</h1>
-        <p className="p-3 max-w-[800px]">
+        <h1 data-aos="fade-down" className="lg:text-5xl text-3xl font-bold py-3">Contactez-nous</h1>
+        <p data-aos="fade-down" data-aos-duration="1500" className="p-3 max-w-[800px]">
           Concretisez vos projets avec Kibyon ! Si vous avez une question, une
           demande particuliére ou pour tout autres besoin contactez-nous,
           ça ne vous engage à rien.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-5 lg:px-20 px-5 py-10 ">
+      <div className="grid lg:grid-cols-2 gap-5 lg:px-20 px-5 py-10 overflow-hidden">
         {/* -----------------
         contact info side
         ---------------- */}
 
         <div className="text-base-100">
           {/* =====================Pourquoi nous contacter=============================     */}
-          <div className="flex gap-5 items-center my-5">
+          <div className="flex gap-5 items-center my-5" data-aos="fade-right" >
             <div>
             <BsCheckAll className="text-5xl text-primary w-16 h-16 p-3 bg-base-100 rounded-full" />
             </div>
@@ -43,7 +43,7 @@ const Contact = () => {
 
           {/* ==========================Adresse========================= */}
 
-          <div className="flex gap-5 items-center my-5">
+          <div className="flex gap-5 items-center my-5" data-aos="fade-right" data-aos-duration="1100">
             <div className="w-16 h-16 p-3 bg-base-100 rounded-full flex items-center justify-center">
             <ImLocation2 className="text-5xl text-primary" />
             </div>
@@ -55,7 +55,7 @@ const Contact = () => {
           </div>
           {/* ==========================N° de télépohne========================= */}
 
-          <div className="flex gap-5 items-center my-5">
+          <div className="flex gap-5 items-center my-5" data-aos="fade-right" data-aos-duration="1200">
             <ImMobile className="text-5xl text-primary w-16 h-16 p-3 bg-base-100 rounded-full" />
             <div>
               <h3 className="lg:text-3xl text-2xl font-bold">N° de télépohne</h3>
@@ -64,7 +64,7 @@ const Contact = () => {
           </div>
           {/* ==========================Mail========================= */}
 
-          <div className="flex gap-5 items-center">
+          <div className="flex gap-5 items-center" data-aos="fade-right"  data-aos-once="true" data-aos-duration="1500">
             <MdAlternateEmail className="text-5xl text-primary w-16 h-16 p-3 bg-base-100 rounded-full" />
             <div>
               <h3 className="lg:text-3xl text-2xl font-bold">Mail</h3>
@@ -76,8 +76,8 @@ const Contact = () => {
         {/* ------------------------
         contact form side
         ------------------- */}
-        <div className="bg-base-100 p-10 rounded-lg  ">
-          <h2 className="text-3xl font-semibold pb-8">Envoyer un message</h2>
+        <div className="bg-base-100 p-10 rounded-lg  " data-aos="fade-left" data-aos-duration="1500">
+          <h2 className="text-3xl font-semibold pb-8" >Envoyer un message</h2>
 
           <form
             className="contactForm"

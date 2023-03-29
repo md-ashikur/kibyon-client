@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import video from "../../Videos/Prévi VF (2023).mp4";
 
 const OfferSecThree = () => {
+
   useEffect(() => {
     let $spacer = document.querySelector(".spacer");
     let $video = document.querySelector(".video");
@@ -44,7 +45,7 @@ const OfferSecThree = () => {
         {/* ================•	Appear frame 0===1st part=================== */}
 
         <div className="content py-16 z-20">
-          <div className="my-10 lg:px-20 w-[50%]">
+          <div className="my-10 lg:px-20 lg:w-[50%]">
             <h1 className="text-4xl text-left font-bold text-base-100">
               Qu’est-ce qu’un prévisionnel financier ?
             </h1>
@@ -98,7 +99,7 @@ const OfferSecThree = () => {
 
           {/* =============•	Appear frame 530==========3rd part================================== */}
 
-          <div className="lg:px-20 mt-[800px] w-[70%]">
+          <div className="lg:px-20 mt-[800px] lg:w-[70%]">
             <h1 className="text-3xl font-bold text-base-100">
               Comment cela va -t-il se dérouler ?
             </h1>
@@ -150,10 +151,10 @@ const OfferSecThree = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="h-screen">
           <div className="spacer"></div>
 
-          <video className="video">
+          <video className="video !h-screen !w-full object-cover">
             <source src={video} type="video/mp4" />
           </video>
           

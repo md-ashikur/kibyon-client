@@ -3,6 +3,7 @@
 .bgPic{
   background-image: url(../../img/Background.png);
   background-size: cover;
+  height: auto;
 }
 
 .flip-card {

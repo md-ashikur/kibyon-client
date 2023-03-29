@@ -6,8 +6,15 @@ import Accueil from "./Pages/Accueil/Accueil";
 import Contact from "./Pages/Contact/Contact";
 import LegalPage from "./Pages/LegalPage/LegalPage";
 import CookieConsent from "react-cookie-consent";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import Aos from "aos";
+import 'aos/dist/aos.css';
+
 
 function App() {
+
+  Aos.init(); 
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -16,6 +23,7 @@ function App() {
         { path: "/", element: <Accueil /> },
         { path: "/offer", element: <OfferPage /> },
         { path: "/contact", element: <Contact /> },
+        { path: "/about", element: <AboutUs/> },
         { path: "/legal", element: <LegalPage /> },
       ],
     },

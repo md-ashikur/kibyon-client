@@ -25,8 +25,8 @@ const OfferPage = () => {
      
           <div className="flex items-center">
           <div>
-            <h1 className="text-5xl font-bold">Nos offres</h1>
-            <p className="font-light my-4 text-justify z-50">
+            <h1 className="text-5xl font-bold" data-aos="fade-right"  data-aos-duration="1100">Nos offres</h1>
+            <p className="font-light my-4 text-justify z-50" data-aos="fade-right" data-aos-duration="1600">
               Nos offres sont toutes personnalisées et adaptées à vos projets.
               Avec Kibyon, obtenez le conseil dont vous avez besoin pour tous
               vos projets. Vous découvrirez ci-dessous nos offres de base que
@@ -50,7 +50,7 @@ const OfferPage = () => {
 
         <div className="grid lg:grid-rows-2  grid-rows-4 grid-flow-col gap-5 justify-center pt-5 lg:pt-0">
           {/* ================card1======================== */}
-          <div className="relative cardBody">
+          <div className="relative cardBody" data-aos="flip-up" >
             <h2 className="absolute top-5 left-10 z-10 cardText">
               Étude de marché
             </h2>
@@ -80,7 +80,7 @@ const OfferPage = () => {
           </div>
 
           {/* ====================card3=========== */}
-          <div className="relative cardBody">
+          <div className="relative cardBody" data-aos="flip-up"  data-aos-duration="1200">
             <h2 className="absolute top-5 left-14 z-10 cardText">
               Business plan
             </h2>
@@ -111,7 +111,7 @@ const OfferPage = () => {
           </div>
 
           {/* ==========================card2============ */}
-          <div className="relative cardBody">
+          <div className="relative cardBody" data-aos="flip-up"  data-aos-duration="1400">
             <h2 className="absolute top-5 left-7 z-10 cardText">
               Prévisionel financier
             </h2>
@@ -142,7 +142,7 @@ const OfferPage = () => {
             </div>
           </div>
           {/* ===================card4================== */}
-          <div className="relative cardBody">
+          <div className="relative cardBody" data-aos="flip-up"  data-aos-duration="1600">
             <h2 className="absolute top-5 left-14 z-10 cardText">
               Offre unique
             </h2>

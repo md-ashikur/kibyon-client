@@ -23,7 +23,7 @@ const WSecTwo = () => {
  
 
   return (
-    <div className=" relative">
+    <div className=" relative  -mt-20">
          <Wave
             className="-mb-5"
             fill="black"
@@ -36,7 +36,8 @@ const WSecTwo = () => {
             }}
           />
       <div className="bg-primary h-52 text-center flex justify-center ">
-        <h1 className="lg:w-[70%] pt-28 px-5 lg:text-4xl text-base-100 font-semibold ">
+        <h1 data-aos="fade-up"
+     data-aos-anchor-placement="top-center" className="lg:w-[70%] pt-28 px-5 lg:text-4xl text-base-100 font-semibold ">
           Et si nous mettions nos compétences au service du plus grand nombre ?
         </h1>
       </div>
@@ -54,14 +55,18 @@ const WSecTwo = () => {
       <div className="bg-primary lg:px-20 pb-20 pt-20 lg:pt-0" >
    
         <div className="relative title rowInverse grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
-          <div className="grid  lg:grid-cols-2 gap-5">
-            <p className="p-5 inverseCol">
+          <div className="grid  lg:grid-cols-2 gap-5" 
+         >
+            <p className="p-5 inverseCol"  
+            data-aos="fade-up"
+          >
               Ce qui nous anime et ce qui fait l’ADN de ce cabinet, c’est
               d’accompagner les chefs d’entreprises et de prendre toute notre
               part dans les défis actuels que rencontrent nos entreprises et
               sociétés en perpétuelle mutation dans une économie globalisée.
             </p>
-            <p className="p-5">
+            <p className="p-5"  data-aos="fade-up"
+         data-aos-duration="3000">
               Les créateurs et dirigeants d’entreprises sont souvent bien trop
               isolés. Nous souhaitons être un appui et un partenaire de
               confiance qui sait rester flexible et s’adapter à chaque besoin
@@ -72,7 +77,8 @@ const WSecTwo = () => {
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-5">
-            <p className="p-5">
+            <p className="p-5"  data-aos="fade-up"
+         >
               L’objectif est de donner un autre regard aux dirigeants, en nous
               basant sur des faits et une connaissance accrue de votre
               structure, votre environnement, de votre quotidien, en fonction
@@ -82,7 +88,8 @@ const WSecTwo = () => {
               plus efficiente possible en fonction des objectifs fixés et de la
               stratégie définis.
             </p>
-            <p className="p-5">
+            <p className="p-5"  data-aos="fade-up"
+           data-aos-duration="3000">
               Nous saurons à la fois vous guider pour performer et affronter le
               quotidien qui est le vôtre. Mais également innover, être
               imaginatifs pour trouver des solutions en tenant compte des

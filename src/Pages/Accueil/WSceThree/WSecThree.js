@@ -33,9 +33,9 @@ const WSecThree = () => {
 
 
   return (
-    <div id="section" className="">
+    <div id="section" className="h-screen">
      
-     <video  className="" >
+     <video controls className=" min-h-full min-w-full object-cover" >
             <source src={welcome} type="video/mp4" />
           </video>
     </div>
