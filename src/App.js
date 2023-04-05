@@ -1,5 +1,5 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Route, Router, RouterProvider } from "react-router-dom";
 import OfferPage from "./Pages/OfferPage/OfferPage";
 import Main from "./Pages/Layout/Main";
 import Accueil from "./Pages/Accueil/Accueil";
@@ -9,6 +9,7 @@ import CookieConsent from "react-cookie-consent";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Aos from "aos";
 import 'aos/dist/aos.css';
+
 
 
 function App() {
@@ -30,13 +31,14 @@ function App() {
 
     {
       path: "*",
-      element: <div>not found</div>,
+      element: <div>Not found</div>,
     },
   ]);
   return (
     <div className="App">
+  
       <RouterProvider router={router}></RouterProvider>
-     
+      
       {/* <CookieConsent debug={true} enableDeclineButton flipButtons>
         This website uses cookies to enhance the user experience.
         <span

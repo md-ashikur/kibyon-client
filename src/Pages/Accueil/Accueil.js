@@ -11,7 +11,7 @@ import { Logo } from "./Model/Logo";
 import { Hand } from "./Model/Hand";
 import { Maps } from "./Model/Maps";
 import gsap, { Sine } from "gsap";
-import { Link } from "react-router-dom";
+
 import Wave from "react-wavify";
 
 // =================plane======================
@@ -23,9 +23,6 @@ import Wave from "react-wavify";
 // ===========Maps=================
 
 const Accueil = () => {
-
- 
-
   const shoeRef = useRef(null);
   const planeRef = useRef(null);
   const handRef = useRef(null);
@@ -81,7 +78,40 @@ const Accueil = () => {
     });
   }, []);
 
+  // text circle animation=======================
+  useEffect(() => {
+    const degreeToRadian = (angle) => {
+      return angle * (Math.PI / 180);
+    };
 
+    const radius = 100;
+    const diameter = radius * 0;
+
+    const circle = document.querySelector(".circle");
+    circle.style.width = `${diameter}px`;
+    circle.style.height = `${diameter}px`;
+
+    const text = circle.dataset.text;
+    const characters = text.split("");
+
+    const deltaAngle = 360 / characters.length;
+    const characterOffsetAngle = 0;
+    let currentAngle = -90;
+
+    characters.forEach((character, index) => {
+      const span = document.createElement("span");
+      span.innerText = character;
+      const xPos = radius * (0 + Math.cos(degreeToRadian(currentAngle)));
+      const yPos = radius * (0 + Math.sin(degreeToRadian(currentAngle)));
+
+      const transform = `translate(${xPos}px, ${yPos}px)`;
+      const rotate = `rotate(${index * deltaAngle + characterOffsetAngle}deg)`;
+      span.style.transform = `${transform} ${rotate}`;
+
+      currentAngle += deltaAngle;
+      circle.appendChild(span);
+    });
+  }, []);
 
   return (
     <div className=" ">
@@ -136,7 +166,6 @@ const Accueil = () => {
               />
               <Plane position={[2.7, -0.3, 0]} rotation={[-0.8, 0.5, 0.2]} />
             </Suspense>
-            
           </Canvas>
 
           {/* =============Logo============ */}
@@ -240,7 +269,11 @@ const Accueil = () => {
           <div className="absolute top-40 lg:px-20 grid lg:grid-cols-2 h-screen">
             {/* shoe block----- */}
             <div></div>
-            <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-7">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-anchor-placement="top-center"
+              className="p-7"
+            >
               <h2 className="text-3xl font-semibold my-10">
                 Choisir Kibyon, c’est oser avancer.
               </h2>
@@ -266,7 +299,11 @@ const Accueil = () => {
               }}
             />
             <div className="grid lg:grid-cols-2 lg:p-20 h-screen absolute top-10">
-              <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-5 text-base-100">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-anchor-placement="top-center"
+                className="p-5 text-base-100"
+              >
                 <h2 className="text-3xl font-semibold my-10">
                   Et si on avançait ensemble ?
                 </h2>
@@ -279,7 +316,35 @@ const Accueil = () => {
                   unique et bienveillante.
                 </p>
               </div>
-              <div data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+              <div
+                data-aos="fade-left"
+                data-aos-anchor-placement="top-center"
+                data-aos-duration="2000"
+              >
+                {/* plane  text animation------------------- */}
+                <div className=" absolute top-0 right-[50%]">
+                  <svg
+                    class="circleText"
+                    viewBox="0 0 500 500"
+                    data-duration="5"
+                  >
+                    <path
+                      id="textcircle"
+                      fill="none"
+                     
+                      stroke-width="0"
+                      data-duration="5"
+                      d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
+                    ></path>
+
+                    <text dy="-25" >
+                      <textPath href="#textcircle">
+                        
+                      Et si on avançait ensemble ?
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
                 <Canvas
                   className="-mt-28 "
                   camera={{ fov: 30, position: [1, 2, 2] }}
@@ -318,7 +383,19 @@ const Accueil = () => {
               }}
             />
             <div className="lg:p-20  grid lg:grid-cols-2 h-screen absolute top-20  ">
-              <div className="" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+              <div
+                className=""
+                data-aos="fade-right"
+                data-aos-anchor-placement="top-center"
+                data-aos-duration="2000"
+              >
+                {/* hand text circle animation----------- */}
+                <div className="cd absolute top-0 right-[50%]">
+                  <div
+                    data-text="Un conseil personnalisé et adapté&nbsp;"
+                    className="my-20 circle text-orange-400"
+                  ></div>
+                </div>
                 <Canvas
                   camera={{ fov: 60, position: [1, 0, 2] }}
                   className="lg:-mt-28 -ml-20"
@@ -340,7 +417,11 @@ const Accueil = () => {
                   </Suspense>
                 </Canvas>
               </div>
-              <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-5">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-anchor-placement="top-center"
+                className="p-5"
+              >
                 <h2 className="lg:text-3xl text-2xl font-semibold my-10">
                   Un conseil personnalisé et adapté
                 </h2>
@@ -372,7 +453,11 @@ const Accueil = () => {
               }}
             />
             <div className="lg:px-20 grid lg:grid-cols-2 h-screen absolute top-40 text-base-100">
-              <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-5">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-anchor-placement="top-center"
+                className="p-5"
+              >
                 <h2 className="lg:text-3xl text-2xl font-semibold my-10">
                   …Pour répondre à vos besoins
                 </h2>
@@ -386,7 +471,36 @@ const Accueil = () => {
                 </p>
               </div>
 
-              <div data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+              <div
+                data-aos="fade-left"
+                data-aos-anchor-placement="top-center"
+                data-aos-duration="2000"
+              >
+                {/* map text circle animation----------- */}
+                <div className="cd absolute top-0 right-[50%]">
+                  <svg
+                    class="circleText"
+                    viewBox="0 0 500 500"
+                    data-duration="5"
+                  >
+                    <path
+                      id="textcircle"
+                      fill="none"
+                     
+                      stroke-width="0"
+                      data-duration="5"
+                      d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
+                    ></path>
+
+                    <text dy="-25" >
+                      <textPath href="#textcircle">
+                        
+                     …Pour répondre à vos besoins
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+
                 <Canvas
                   className=" lg:-mt-28 "
                   camera={{ fov: 70, position: [1, 2, 3] }}
@@ -409,11 +523,10 @@ const Accueil = () => {
             </div>
           </div>
         </div>
-       
       </section>
 
       <section className="relative z-20">
-      <WSecTwo />
+        <WSecTwo />
       </section>
 
       <WSecThree />
