@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 import Wave from "react-wavify";
 import kibyonText from "../../../img/Welcome page/kt.png";
@@ -54,7 +55,7 @@ const WSecTwo = () => {
 
       <div className="bg-primary lg:px-20 pb-20 pt-20 lg:pt-0" >
    
-        <div className="relative title rowInverse grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
+        <div className="relative grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
           <div className="grid  lg:grid-cols-2 gap-5" 
          >
             <p className="p-5 inverseCol"  
@@ -101,6 +102,14 @@ const WSecTwo = () => {
           </div>
         
         </div>
+        <div className="lg:flex items-center justify-center mt-12 hidden">
+              <Link to="/about">
+                <button className="border text-base-100 px-3 py-2 rounded-lg hover:border-secondary hover:scale-105 duration-150 transition ease-in-out">
+                En apprendre advantage sur kibyon
+                </button>
+              </Link>
+            </div>
+    
       </div>
 
 

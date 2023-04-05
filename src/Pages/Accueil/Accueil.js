@@ -85,7 +85,7 @@ const Accueil = () => {
 
   return (
     <div className=" ">
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden z-10">
         <div className="h-screen w-full -mt-9">
           <img
             src={welcomeBg}
@@ -136,6 +136,7 @@ const Accueil = () => {
               />
               <Plane position={[2.7, -0.3, 0]} rotation={[-0.8, 0.5, 0.2]} />
             </Suspense>
+            
           </Canvas>
 
           {/* =============Logo============ */}
@@ -278,7 +279,7 @@ const Accueil = () => {
                   unique et bienveillante.
                 </p>
               </div>
-              <div data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+              <div data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="2000">
                 <Canvas
                   className="-mt-28 "
                   camera={{ fov: 30, position: [1, 2, 2] }}
@@ -304,7 +305,7 @@ const Accueil = () => {
             </div>
           </div>
           {/* hand--------------------- */}
-          <div className="relative -mt-20">
+          <div className="relative -mt-20 overflow-hidden">
             <Wave
               className="h-screen -mt-20 lg:-mt-0"
               fill="#ffff"
@@ -316,11 +317,11 @@ const Accueil = () => {
                 points: 5,
               }}
             />
-            <div className="lg:p-20 grid lg:grid-cols-2 h-screen absolute top-20  ">
-              <div data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+            <div className="lg:p-20  grid lg:grid-cols-2 h-screen absolute top-20  ">
+              <div className="" data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-duration="2000">
                 <Canvas
                   camera={{ fov: 60, position: [1, 0, 2] }}
-                  className="-mt-28"
+                  className="lg:-mt-28 -ml-20"
                 >
                   <Suspense fallback={null}>
                     <ambientLight />
@@ -340,7 +341,7 @@ const Accueil = () => {
                 </Canvas>
               </div>
               <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-5">
-                <h2 className="text-3xl font-semibold my-10">
+                <h2 className="lg:text-3xl text-2xl font-semibold my-10">
                   Un conseil personnalisé et adapté
                 </h2>
                 <p className="text-justify">
@@ -358,9 +359,9 @@ const Accueil = () => {
 
           {/* map block----- */}
 
-          <div className="relative ">
+          <div className="relative -mt-20">
             <Wave
-              className="h-screen -mt-20 lg:-mt-0"
+              className="h-screen mt-3 lg:-mt-0"
               fill="#0432c9"
               paused={false}
               options={{
@@ -372,7 +373,7 @@ const Accueil = () => {
             />
             <div className="lg:px-20 grid lg:grid-cols-2 h-screen absolute top-40 text-base-100">
               <div data-aos="zoom-in-up" data-aos-anchor-placement="top-center" className="p-5">
-                <h2 className="text-3xl font-semibold my-10">
+                <h2 className="lg:text-3xl text-2xl font-semibold my-10">
                   …Pour répondre à vos besoins
                 </h2>
                 <p className="text-justify">
@@ -385,9 +386,9 @@ const Accueil = () => {
                 </p>
               </div>
 
-              <div data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-duration="2000">
+              <div data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="2000">
                 <Canvas
-                  className="-mt-28 "
+                  className=" lg:-mt-28 "
                   camera={{ fov: 70, position: [1, 2, 3] }}
                   shadowMap
                 >
@@ -408,10 +409,11 @@ const Accueil = () => {
             </div>
           </div>
         </div>
+       
       </section>
 
-      <section>
-        <WSecTwo />
+      <section className="relative z-20">
+      <WSecTwo />
       </section>
 
       <WSecThree />

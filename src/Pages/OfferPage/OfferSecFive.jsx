@@ -31,22 +31,25 @@ const OfferSecFive = () => {
   return (
     <div>
       <div className="relative overflow-hidden">
-        <div className="absolute lg:top-10 top-5 z-10 lg:px-20 px-3 text-base-100 py-10">
-          <div className="flex justify-center flex-col items-center">
-            <h2 className="lg:text-5xl text-xl  font-bold text-secondary">
-              Qu’est-ce que l’offre unique ?
-            </h2>
-            <p className="text-base-100 border-2 border-secondary lg:mt-[100%] mt-40 lg:mx-36 lg:text-2xl text-sm p-3 text-justify">
-              Exprimez-nous vos difficultés, vos besoins et nous trouverons la
+       
+          
+
+          <div className="card p-8 absolute lg:bottom-32 bottom-10 mx-5 lg:left-52 lg:w-[70%] border border-secondary z-10"
+          >
+          <h2 className="lg:text-5xl font-bold my-10 text-secondary">
+          Qu’est-ce que l’offre unique ?
+          </h2>
+          <p className=" lg:block lg:text-base text-base-100  text-xs text-justify">
+          Exprimez-nous vos difficultés, vos besoins et nous trouverons la
               meilleure façon de vous aider. A travers cette offre nous voulons
               apporter de la flexibilité et ainsi être au plus près de vos
               préoccupations et des problématiques que vous rencontrez. Pour
               autant, si cela sort de notre champ de compétence nous vous en
               ferons part et tenterons de vous orienter vers les experts les
               plus adaptés.
-            </p>
-          </div>
+          </p>
         </div>
+        
 
         <div ref={parallaxRefFive}>
           <img src={sec5tree} alt="" className="w-full absolute" />

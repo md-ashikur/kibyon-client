@@ -1,0 +1,17 @@
+html {
+    height: 100vh;
+  }
+
+  
+ 
+  
+  .content {
+    position: relative;
+    padding: 20px;
+  
+    @media (min-width: 768px) {
+      padding: 20px 60px;
+    }
+  
+  }
+  
