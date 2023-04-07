@@ -1,9 +1,39 @@
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import gsap from "gsap";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 export function Maps(props) {
     const { nodes, materials } = useGLTF("/Models/Maps.glb");
+
+    const mapRef = useRef();
+
+    
+
+
+  useEffect(() => {
+    const tween = gsap.to(mapRef.current.position, {
+      y: '+0.3',
+      
+      yoyo: true,
+      repeat: -1,
+      duration: 1,
+      ease: 'power1.inOut',
+    });
+    return () => {
+      tween.kill();
+    };
+  }, []);
+
+  useFrame(() => {
+    // Update any other animations here
+   
+  });
+
     return (
-      <group {...props} dispose={null} >
+    
+       <group {...props} dispose={null} ref={mapRef}>
         <mesh
         castShadow
           geometry={nodes.Plane.geometry}
@@ -362,5 +392,6 @@ export function Maps(props) {
           scale={0}
         />
       </group>
+    
     );
   }

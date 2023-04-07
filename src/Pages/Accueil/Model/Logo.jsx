@@ -1,7 +1,11 @@
 import { useGLTF } from "@react-three/drei"
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 export function Logo(props) {
     const { nodes, materials } = useGLTF('/Models/LogoKibyon.glb')
+
+
     return (
       <group {...props} dispose={null}  >
         <mesh geometry={nodes.Round_Cube.geometry} material={materials.Apple_Voice_Memos} rotation={[0, 1.57, 0]} scale={[1.26, 2.74, 2.74]} />

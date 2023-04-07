@@ -7,7 +7,7 @@ Canvas {
 
 
 text {
-  fill: #ffffff;
+ 
   font-size: 50px;
   letter-spacing: 18px;
 }
@@ -22,7 +22,7 @@ text {
   max-height: 75vh;
   max-width: 75vw;
   overflow: visible;
-  transform-origin: center center;
+
   
 }
 
