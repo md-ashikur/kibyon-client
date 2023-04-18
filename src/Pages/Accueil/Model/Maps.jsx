@@ -14,11 +14,11 @@ export function Maps(props) {
 
   useEffect(() => {
     const tween = gsap.to(mapRef.current.position, {
-      y: '+0.3',
+      y: '-4',
       
       yoyo: true,
       repeat: -1,
-      duration: 1,
+      duration: 3,
       ease: 'power1.inOut',
     });
     return () => {

@@ -1,7 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import gsap from "gsap"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function Hand(props) {
   const group = useRef();
@@ -9,30 +9,33 @@ export function Hand(props) {
     const { actions } = useAnimations(animations, group)
 
     
-    const handRef = useRef();
+ 
 
-    useEffect(() => {
-      const tween = gsap.to(handRef.current.position, {
-        y: '+0.3',
-        
-        yoyo: true,
-        repeat: -1,
-        duration: 1,
-        ease: 'power1.inOut',
-      });
-      return () => {
-        tween.kill();
-      };
-    }, []);
-  
-    useFrame(() => {
-      // Update any other animations here
-     
+
+
+const handGroupRef = useRef();
+const [hovered, setHovered] = useState(false);
+
+useEffect(() => {
+  if (hovered) {
+    gsap.to(handGroupRef.current.position, {
+      y: -0.5,
+      blur: 5,
+      opacity:0.4,
+      duration: 0.5,
     });
+  } else {
+    gsap.to(handGroupRef.current.position, {
+      z: 0,
+      blur: 0,
+      duration: 0.5,
+    });
+  }
+}, [hovered]);
 
     return (
       <group ref={group} {...props} dispose={null}>
-        <group ref={handRef} name="Scene">
+        <group ref={handGroupRef} name="Scene" onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
          
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.04}>
             <group name="10d303afd96646438dfea7a6b7c7c561fbx" rotation={[Math.PI / 2, 0, 0]}>

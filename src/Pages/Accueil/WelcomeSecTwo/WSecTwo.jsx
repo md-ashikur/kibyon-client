@@ -104,7 +104,7 @@ const WSecTwo = () => {
         </div>
         <div className="lg:flex items-center justify-center mt-12 hidden">
               <Link to="/about">
-                <button className="border text-base-100 px-3 py-2 rounded-lg hover:border-secondary hover:scale-105 duration-150 transition ease-in-out">
+                <button className="border text-base-100 px-3 py-2 rounded-lg hover:bg-white hover:text-black hover:scale-105 duration-150 transition ease-in-out">
                 En apprendre advantage sur kibyon
                 </button>
               </Link>

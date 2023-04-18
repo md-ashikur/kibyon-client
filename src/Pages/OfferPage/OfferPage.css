@@ -3,7 +3,7 @@
 .bgPic{
   background-image: url(../../img/Background.png);
   background-size: cover;
-  height: auto;
+
 }
 
 .flip-card {
@@ -31,7 +31,7 @@
   .cardBody:hover .cardText {
     transition-duration: 0.7s ;
     transform: scale(1.1);
-    color: #2c71f6;
+    color: #0332c8;
     font-weight: 700;
   }
 

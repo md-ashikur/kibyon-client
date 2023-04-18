@@ -23,11 +23,11 @@ export function Shoes(props) {
 
   useEffect(() => {
     const tween = gsap.to(shoeRef.current.position, {
-      y: '+0.3',
+      y: '-6',
     
       yoyo: true,
       repeat: -1,
-      duration: 2,
+      duration: 3,
       ease: 'power1.inOut',
     });
     return () => {

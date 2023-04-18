@@ -10,7 +10,7 @@ import { Plane } from "./Model/Plane";
 import { Logo } from "./Model/Logo";
 import { Hand } from "./Model/Hand";
 import { Maps } from "./Model/Maps";
-import gsap, { Sine } from "gsap";
+
 
 import Wave from "react-wavify";
 
@@ -38,26 +38,29 @@ const Accueil = () => {
         <Canvas
           camera={{ fov: 50, position: [0, 0, 20] }}
           className=" absolute bottom-0 !w-screen !h-screen z-1 "
+          enableZoom={true}
+          rotation={[0, -0.4, 0]}
         >
           <Suspense fallback={null}>
-            <ambientLight intensity={0.2} />
-
-            <directionalLight position={[3, 10, 3]} />
+            <ambientLight intensity={0.1} />
+          
+            <directionalLight position={[3, 5, 0]} />
             <pointLight position={[3, 10, 3]} />
 
-            <Shoes position={[-17, -1, -10]} rotation={[0, 1, 0]} scale={0.5} />
+            <Shoes position={[-17, -7, -10]} rotation={[-0.2, 1, 0]} scale={0.6} />
+            
+            <Plane position={[4, -4, 0]} rotation={[0.1, 0.2, 0]} scale={4} />
 
-            <Plane position={[4, -2, 0]} rotation={[0.1, 0.2, 0]} scale={4} />
-
-            <Logo position={[0, -3.5, 0]} />
+            <Logo position={[0, -4.2, 0]} scale={0.6}/>
 
             <Hand
+            scale={1.2}
               className=""
-              position={[4, -2.2, 6]}
-              rotation={[2, -1.9, 2]}
+              position={[4, -4.5, 6]}
+              rotation={[2, -2.1, 2]}
             />
 
-            <Maps position={[10, 0, 3]} rotation={[0, -5.3, 0.5]} />
+            <Maps position={[11, -4.5, 3]} scale={1.3} rotation={[-0.3, -2, -0.2]} />
           </Suspense>
         </Canvas>
 
@@ -70,12 +73,12 @@ const Accueil = () => {
           <a href="#plane">
             <div className="h-52 w-52  rounded-full absolute top-[40%] left-[27%] z-10"></div>
           </a>
-          <a href="#hand">
+          {/* <a href="#hand">
             <div className="h-52 w-52   rounded-full absolute top-[40%] right-[27%] z-10"></div>
-          </a>
-          <a href="#map">
+          </a> */}
+          {/* <a href="#map">
             <div className="h-52 w-52  rounded-full absolute top-[35%] right-[13%] z-10"></div>
-          </a>
+          </a> */}
         </div>
       </div>
       {/* ============section 1 blocks========================== */}
@@ -95,30 +98,31 @@ const Accueil = () => {
         />
         <div className="absolute top-40 lg:px-20 grid lg:grid-cols-2 h-screen">
           {/* shoe block----- */}
-          <div>
-            {/* shoe  text animation------------------- */}
-            <div className=" absolute top-0 ">
-              <svg
-                class="circleText left-0"
-                viewBox="0 0 500 500"
-                data-duration="5"
+          <div
+              data-aos="fade-left"
+              data-aos-anchor-placement="top-center"
+              data-aos-duration="2000"
+            >
+              
+              <Canvas
+                className="-mt-28 "
+                camera={{ fov: 30, position: [1, 2, 2] }}
               >
-                <path
-                  id="textcircle"
-                  fill="none"
-                  stroke-width="0"
-                  data-duration="5"
-                  d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                ></path>
-
-                <text dy="-25">
-                  <textPath href="#textcircle">
-                    Choisir Kibyon, c’est oser avancer.
-                  </textPath>
-                </text>
-              </svg>
+                <Suspense fallback={null}>
+                  <ambientLight />
+                  <directionalLight position={[3, 10, 3]} />
+                  <pointLight position={[-2, 2, -1]} />
+                  <OrbitControls
+                    enableZoom={false}
+                    maxAzimuthAngle={0}
+                    minAzimuthAngle={0}
+                    maxPolarAngle={0}
+                    minPolarAngle={1}
+                  />
+                  <Shoes  position={ [0, 0.5, 0]} />
+                </Suspense>
+              </Canvas>
             </div>
-          </div>
           <div
             data-aos="zoom-in-up"
             data-aos-anchor-placement="top-center"
@@ -172,24 +176,7 @@ const Accueil = () => {
               data-aos-anchor-placement="top-center"
               data-aos-duration="2000"
             >
-              {/* plane  text animation------------------- */}
-              <div className=" absolute top-0 right-[50%]">
-                <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
-                  <path
-                    id="textcircle"
-                    fill="none"
-                    stroke-width="0"
-                    data-duration="5"
-                    d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                  ></path>
-
-                  <text dy="-25" className="fill-white">
-                    <textPath href="#textcircle">
-                      Et si on avançait ensemble ?
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
+              
               <Canvas
                 className="-mt-28 "
                 camera={{ fov: 30, position: [1, 2, 2] }}
@@ -232,29 +219,7 @@ const Accueil = () => {
               data-aos-anchor-placement="top-center"
               data-aos-duration="2000"
             >
-              {/* hand text circle animation----------- */}
-
-              <div className=" absolute top-0 ">
-                <svg
-                  class="circleText left-0"
-                  viewBox="0 0 500 500"
-                  data-duration="5"
-                >
-                  <path
-                    id="textcircle"
-                    fill="none"
-                    stroke-width="0"
-                    data-duration="5"
-                    d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                  ></path>
-
-                  <text dy="-25">
-                    <textPath href="#textcircle">
-                      Un conseil personnalisé et adapté
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
+              
               <Canvas
                 camera={{ fov: 60, position: [1, 0, 2] }}
                 className="lg:-mt-28 -ml-20"
@@ -315,7 +280,7 @@ const Accueil = () => {
               className="p-5"
             >
               <h2 className="lg:text-3xl text-2xl font-semibold my-10">
-                …Pour répondre à vos besoins
+                Pour répondre à vos besoins
               </h2>
               <p className="text-justify">
                 Il existe une multitude de chemins pour atteindre un but, notre
@@ -332,24 +297,7 @@ const Accueil = () => {
               data-aos-anchor-placement="top-center"
               data-aos-duration="2000"
             >
-              {/* map text circle animation----------- */}
-              <div className="cd absolute top-0 right-[50%]">
-                <svg class="circleText" viewBox="0 0 500 500" data-duration="5">
-                  <path
-                    id="textcircle"
-                    fill="none"
-                    stroke-width="0"
-                    data-duration="5"
-                    d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
-                  ></path>
-
-                  <text dy="-25" className="fill-white">
-                    <textPath href="#textcircle">
-                      …Pour répondre à vos besoins
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
+           
 
               <Canvas
                 className=" lg:-mt-28 "
@@ -366,7 +314,7 @@ const Accueil = () => {
                     maxPolarAngle={0}
                     minPolarAngle={1}
                   />
-                  <Maps position={[0, 0.5, 0]} />
+                  <Maps position={ [0, 0.5, 0]}/>
                 </Suspense>
               </Canvas>
             </div>

@@ -40,7 +40,7 @@ const OfferSecThree = () => {
   }, []);
 
   return (
-    <div>
+    <div id="financial_forecast">
       <section className="relative lg:py-20 lg:h-[13500px] overflow-hidden">
         {/* ================•	Appear frame 0===1st part=================== */}
 

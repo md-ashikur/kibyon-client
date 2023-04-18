@@ -37,7 +37,7 @@ export function Plane(props) {
 
 
     return (
-      <group ref={group} {...props} dispose={null}>
+      <group ref={group} {...props} dispose={null} >
         <group ref={planeRef} name="Studio_limbo_3_point_lighting_2x2x2">
           <group name="Jet_03" position={[3.4, -5.76, -51.38]}>
             <mesh name="Jet_Flame_mesh_Icosphere"  geometry={nodes.Jet_Flame_mesh_Icosphere.geometry} material={new MeshBasicMaterial({

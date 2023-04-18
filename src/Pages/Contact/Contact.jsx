@@ -64,7 +64,7 @@ const Contact = () => {
           </div>
           {/* ==========================Mail========================= */}
 
-          <div className="flex gap-5 items-center" data-aos="fade-right"  data-aos-once="true" data-aos-duration="1500">
+          <div className="flex gap-5 items-center" data-aos="fade-right"  data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
             <MdAlternateEmail className="text-5xl text-primary w-16 h-16 p-3 bg-base-100 rounded-full" />
             <div>
               <h3 className="lg:text-3xl text-2xl font-bold">Mail</h3>
