@@ -14,48 +14,12 @@ const AboutUs = () => {
 // const end = section.querySelector('h1');
 
 // scrollMagic-----------------
-useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const video = document.querySelector(".myVideo");
-
-  var tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#section1",
-      start: "top center",
-      end: "+=100%",
-      scrub: true,
-      markers: true,
-      pin: true
-    }
-  });
-
-  tl.to(".myVideo", {
-    currentTime: 10,
-    duration: 10,
-    ease: "none"
-  });
-}, []);
 
 
 
   return (
     <div>
-      <div className="h-screen bg-red-400"></div>
-      <div className="intro">
-        <h1>hello</h1>
-        <video id="vf" src={vf}></video>
-      </div>
-      <section className="h-screen">
-        <h1>next mission</h1>
-      </section>
-
-
-      <section id="section1">
-  <video class="myVideo" src={vf} ></video>
-    
-    
-    </section>
+   
  
     </div>
   );
