@@ -9,22 +9,21 @@ import "./WSecTwo.css";
 
 const WSecTwo = () => {
 
-  useEffect(() => {
-    const cursor = document.getElementById("cursor");
-
-    const tip = document.getElementById("tip");
-    
-    document.addEventListener('mousemove', e => {
-      cursor.style.top = e.pageY + "px";
-      cursor.style.left = e.pageX + "px";
-      
-      tip.style.display = "none";
-    });
-  },[])
+  const handleMouseMove = (e) => {
+    document.documentElement.style.setProperty(
+      "--x",
+      e.clientX + window.scrollX + "px"
+    );
+    document.documentElement.style.setProperty(
+      "--y",
+      e.clientY + window.scrollY + "px"
+    );
+  };
  
 
   return (
-    <div className=" relative  -mt-20">
+    <div className=" relative -mt-20" onMouseMove={handleMouseMove}>
+       <span className="cursor z-20" />
          <Wave
             className="-mb-5"
             fill="black"
@@ -53,9 +52,10 @@ const WSecTwo = () => {
         </ParallaxBanner>
       </ParallaxProvider>
 
-      <div className="bg-primary lg:px-20 pb-20 pt-20 lg:pt-0" >
+      <div className="wsecTwo bg-primary lg:px-20 pb-20 pt-20 lg:pt-0">
    
-        <div className="relative grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
+      
+        <div className=" grid lg:grid-rows-2 gap-8 text-justify  text-base-100">
           <div className="grid  lg:grid-cols-2 gap-5" 
          >
             <p className="p-5 inverseCol"  

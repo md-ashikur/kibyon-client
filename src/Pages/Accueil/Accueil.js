@@ -14,6 +14,7 @@ import { Maps } from "./Model/Maps";
 
 import Wave from "react-wavify";
 import { Map } from "../AboutUs/Model/Map";
+import { Shoe } from "../AboutUs/Model/Shoe";
 
 
 
@@ -87,7 +88,7 @@ const Accueil = () => {
       <div className="relative mt-10">
         <Wave
           id="shoe"
-          className="h-screen -mt-20 lg:-mt-0"
+          className="h-screen -mt-20 lg:-mt-0 z-20"
           fill="#ffff"
           paused={false}
           options={{
@@ -107,7 +108,7 @@ const Accueil = () => {
               
               <Canvas
                 className="-mt-28 "
-                camera={{ fov: 30, position: [1, 2, 2] }}
+                camera={{ fov: 70, position: [1, 2, 2] }}
               >
                 <Suspense fallback={null}>
                   <ambientLight />
@@ -120,7 +121,7 @@ const Accueil = () => {
                     maxPolarAngle={0}
                     minPolarAngle={1}
                   />
-                  <Shoes  position={ [0, 0.5, 0]} />
+                  <Shoe  position={ [0, 0.5, 0]} rotation={[-0.2, 1, 0]} scale={0.15}/>
                 </Suspense>
               </Canvas>
             </div>

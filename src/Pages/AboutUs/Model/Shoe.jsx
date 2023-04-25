@@ -1,65 +1,17 @@
-import { useGLTF, useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import gsap from "gsap";
-import { useEffect } from "react";
-import { useLayoutEffect } from "react";
+import { useGLTF } from "@react-three/drei";
+
 import { useRef } from "react";
 
 export const FLOOR_HIGHT = 7;
 export const NB_FLOORS = 3;
 
-export function Shoes(props) {
+export function Shoe(props) {
   const { nodes, materials } = useGLTF("/Models/Shoes.glb");
   const shoeRef = useRef();
-  const tl = useRef();
-
-  useFrame(({ mouse, viewport }) => {
-    const x = (mouse.x * viewport.width) / 3.5;
-    const y = (mouse.y * viewport.height) / 3.5;
-    shoeRef.current.lookAt(x, y, 1);
-  });
-
   
 
-  useEffect(() => {
-    const tween = gsap.to(shoeRef.current.position, {
-      y: '+0.3',
-    
-      yoyo: true,
-      repeat: -1,
-      duration: 2,
-      ease: 'power1.inOut',
-    });
-    return () => {
-      tween.kill();
-    };
-  }, []);
 
-  useFrame(() => {
-    // Update any other animations here
-    
-  });
-
-  // const scroll = useScroll();
-
-  // useFrame(() => {
-  //   tl.current.seek(scroll.offset * tl.current.duration())
-  // });
-
-
-  // useLayoutEffect(() => {
-  //   tl.current = gsap.timeline();
-
-  //   // vertical animation---
-  //   tl.current.to(
-  //     shoe.current.position,
-  //     {
-  //       duration: 2,
-  //       y: -FLOOR_HIGHT * (NB_FLOORS - 1),
-  //     },
-  //     0
-  //   );
-  // }, []);
+ 
   return (
     <group ref={shoeRef} {...props} dispose={null}>
       <group

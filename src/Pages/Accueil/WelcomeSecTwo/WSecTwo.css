@@ -1,61 +1,25 @@
-#background {
 
-  background-color: black;
-  background-size: cover;
-  
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  
-  height: 100vh;
-}
 
-#sample-text {
-  background-color: white;
-  border-radius: 10px;
-  
-  max-width: 50%;
-  padding: 10px 20px;
-}
 
-#cursor {
-  background-color: black;
-  border-radius: 25px;
-  
-  height: 50px;
-  width: 50px;
-  
-  display: block;
+
+
+/* style for cursor */
+.cursor {
   position: absolute;
-  top: 0;
-  left: 0;
-  
-  filter: invert(1);
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: calc(var(--y) - 40px);
+  left: calc(var(--x) - 40px);
+  transform: translate(-50%, -50%);
   mix-blend-mode: difference;
+  transition: background-color 0.3s ease-out;
 }
 
-#tip {
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  
-  position: absolute;
-  top: 10px;
-  left: 60px;
-  padding: 5px 10px;
-  
-  animation: blink 1s step-start 0s infinite;
-  -webkit-animation: blink 1s step-start 0s infinite;
-  
-}
 
-@keyframes blink {
-  50% {
-    opacity: 0.0;
-  }
-}
-@-webkit-keyframes blink {
-  50% {
-    opacity: 0.0;
-  }
+/* set cursor position using custom properties */
+:root {
+  --x: 0;
+  --y: 0;
 }
