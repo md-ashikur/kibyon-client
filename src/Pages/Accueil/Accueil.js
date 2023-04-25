@@ -13,6 +13,7 @@ import { Maps } from "./Model/Maps";
 
 
 import Wave from "react-wavify";
+import { Map } from "../AboutUs/Model/Map";
 
 
 
@@ -301,7 +302,7 @@ const Accueil = () => {
 
               <Canvas
                 className=" lg:-mt-28 "
-                camera={{ fov: 70, position: [1, 2, 3] }}
+                camera={{ fov: 70, position: [1, 4, 3] }}
                 shadowMap
               >
                 <Suspense fallback={null}>
@@ -314,7 +315,7 @@ const Accueil = () => {
                     maxPolarAngle={0}
                     minPolarAngle={1}
                   />
-                  <Maps position={ [0, 0.5, 0]}/>
+                  <Map position={ [0, 0.5, 0]}/>
                 </Suspense>
               </Canvas>
             </div>

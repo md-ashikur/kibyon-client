@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useEffect } from "react";
 
-export function Maps(props) {
+export function Map(props) {
     const { nodes, materials } = useGLTF("/Models/Maps.glb");
 
     const mapRef = useRef();
@@ -18,7 +18,7 @@ export function Maps(props) {
       
       yoyo: true,
       repeat: -1,
-      duration: 1,
+      duration: 2,
       ease: 'power1.inOut',
     });
     return () => {
