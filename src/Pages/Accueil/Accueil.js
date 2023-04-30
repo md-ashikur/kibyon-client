@@ -10,7 +10,8 @@ import { Plane } from "./Model/Plane";
 import { Logo } from "./Model/Logo";
 import { Hand } from "./Model/Hand";
 import { Maps } from "./Model/Maps";
-
+import planeVideo from "../../Videos/Plane  trnasparent _ home page 04-23 VF_VP9.webm"
+import mapVideo from "../../Videos/Maps transparent VF (quick time) 27-04_VP9.webm"
 
 import Wave from "react-wavify";
 import { Map } from "../AboutUs/Model/Map";
@@ -49,9 +50,9 @@ const Accueil = () => {
             <directionalLight position={[3, 5, 0]} />
             <pointLight position={[3, 10, 3]} />
 
-            <Shoes position={[-17, -7, -10]} rotation={[-0.2, 1, 0]} scale={0.6} />
+            <Shoes position={[-17, -7, -10]} rotation={[-0.2, 1, 0]} scale={0.6} onClick={() => window.location.href = "#shoe"}/>
             
-            <Plane position={[4, -4, 0]} rotation={[0.1, 0.2, 0]} scale={4} />
+            <Plane position={[4, -4, 0]} rotation={[0.1, 0.2, 0]} scale={4} onClick={() => window.location.href = "#plane"}/>
 
             <Logo position={[0, -4.2, 0]} scale={0.6}/>
 
@@ -60,28 +61,13 @@ const Accueil = () => {
               className=""
               position={[4, -4.5, 6]}
               rotation={[2, -2.1, 2]}
+              onClick={() => window.location.href = "#hand"}
             />
 
-            <Maps position={[11, -4.5, 3]} scale={1.3} rotation={[-0.3, -2, -0.2]} />
+            <Maps position={[11, -4.5, 3]} scale={1.3} rotation={[-0.3, -2, -0.2]} onClick={() => window.location.href = "#map"} />
           </Suspense>
         </Canvas>
 
-        {/* section link==================== */}
-        <div className="">
-          <a href="#shoe">
-            <div className="h-52 w-52  rounded-full absolute top-[35%] left-[10%] z-10"></div>
-          </a>
-
-          <a href="#plane">
-            <div className="h-52 w-52  rounded-full absolute top-[40%] left-[27%] z-10"></div>
-          </a>
-          {/* <a href="#hand">
-            <div className="h-52 w-52   rounded-full absolute top-[40%] right-[27%] z-10"></div>
-          </a> */}
-          {/* <a href="#map">
-            <div className="h-52 w-52  rounded-full absolute top-[35%] right-[13%] z-10"></div>
-          </a> */}
-        </div>
       </div>
       {/* ============section 1 blocks========================== */}
 
@@ -101,7 +87,7 @@ const Accueil = () => {
         <div className="absolute top-40 lg:px-20 grid lg:grid-cols-2 h-screen">
           {/* shoe block----- */}
           <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-anchor-placement="top-center"
               data-aos-duration="2000"
             >
@@ -143,10 +129,11 @@ const Accueil = () => {
         </div>
         {/* plane---------- */}
         <div className="relative -mt-20">
+    
           <Wave
             id="plane"
             className="h-screen -mt-20 lg:-mt-0"
-            fill="#0432c9"
+            fill="#0120aa"
             paused={false}
             options={{
               height: 20,
@@ -179,7 +166,7 @@ const Accueil = () => {
               data-aos-duration="2000"
             >
               
-              <Canvas
+              {/* <Canvas
                 className="-mt-28 "
                 camera={{ fov: 30, position: [1, 2, 2] }}
               >
@@ -196,7 +183,10 @@ const Accueil = () => {
                   />
                   <Plane position={[2.2, -0.1, 0]} rotation={[-0.4, 0.37, 0]} />
                 </Suspense>
-              </Canvas>
+              </Canvas> */}
+              <video className="video !h-52 !w-96 object-cover" autoPlay>
+            <source src={planeVideo} type="video/mp4" />
+          </video>
             </div>
           </div>
         </div>
@@ -266,7 +256,7 @@ const Accueil = () => {
           <Wave
             id="map"
             className="h-screen mt-3 lg:-mt-0"
-            fill="#0432c9"
+            fill="#0120aa"
             paused={false}
             options={{
               height: 20,
@@ -301,7 +291,7 @@ const Accueil = () => {
             >
            
 
-              <Canvas
+              {/* <Canvas
                 className=" lg:-mt-28 "
                 camera={{ fov: 70, position: [1, 4, 3] }}
                 shadowMap
@@ -318,7 +308,11 @@ const Accueil = () => {
                   />
                   <Map position={ [0, 0.5, 0]}/>
                 </Suspense>
-              </Canvas>
+              </Canvas> */}
+              <video className="video !h-96 !w-96 " autoPlay>
+            <source src={mapVideo} type="video/mp4" />
+          </video>
+
             </div>
           </div>
         </div>

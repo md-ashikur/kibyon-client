@@ -11,14 +11,6 @@ html {
   color: #fff;
 }
 
-/* style for paragraph div */
-.paragraph {
-  position: relative;
-  padding: 30px;
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
 
 /* style for cursor */
 .cursor {
