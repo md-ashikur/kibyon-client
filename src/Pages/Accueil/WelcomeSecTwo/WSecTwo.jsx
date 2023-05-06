@@ -22,7 +22,7 @@ const WSecTwo = () => {
  
 
   return (
-    <div className=" relative -mt-20" onMouseMove={handleMouseMove}>
+    <div className="z-10 relative -mt-20" onMouseMove={handleMouseMove}>
        <span className="cursor z-20" />
          <Wave
             className="-mb-5"

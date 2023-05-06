@@ -1,8 +1,7 @@
-import { useGLTF, useScroll } from "@react-three/drei";
+import { Text, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
-import { useEffect } from "react";
-import { useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
 
 export const FLOOR_HIGHT = 7;
@@ -40,28 +39,28 @@ export function Shoes(props) {
     
   });
 
-  // const scroll = useScroll();
+  
+  const [showText, setShowText] = useState(false);
 
-  // useFrame(() => {
-  //   tl.current.seek(scroll.offset * tl.current.duration())
-  // });
+  const handleMouseEnter = () => {
+    gsap.to(shoeRef.current.scale, { duration: 0.2, x: 0.8, y: 0.8, z: 0.8 });
+    gsap.to(shoeRef.current.rotation, { duration: 0.2, x: -0.2, y: 0, z: 0 });
+    gsap.to(shoeRef.current.position, { duration: 0.2, x: -15, y: -7, z: -10 });
+    setShowText(true);
+  };
 
+  const handleMouseLeave = () => {
+    gsap.to(shoeRef.current.scale, { duration: 0.2, x: 0.6, y: 0.6, z: 0.6 });
+    gsap.to(shoeRef.current.rotation, { duration: 0.2, x: -0.1, y: -0.2, z: 0 });
+    gsap.to(shoeRef.current.position, { duration: 0.2, x: -17, y: -7, z: -10 });
 
-  // useLayoutEffect(() => {
-  //   tl.current = gsap.timeline();
+    setShowText(false);
+  };
 
-  //   // vertical animation---
-  //   tl.current.to(
-  //     shoe.current.position,
-  //     {
-  //       duration: 2,
-  //       y: -FLOOR_HIGHT * (NB_FLOORS - 1),
-  //     },
-  //     0
-  //   );
-  // }, []);
+  
   return (
-    <group ref={shoeRef} {...props} dispose={null}>
+    <>
+    <group ref={shoeRef} {...props} dispose={null} onPointerEnter={handleMouseEnter} onPointerLeave={handleMouseLeave}>
       <group
         position={[-3.6, 2.24, 1.1]}
         rotation={[-Math.PI / 2, 0, 0.32]}
@@ -134,6 +133,11 @@ export function Shoes(props) {
           material={materials.Transparent}
         />
       </group>
+      
     </group>
+    {showText &&<Text position={[-14, -6, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} fontSize={.5} font={'Arial'}>
+      Choisir Kibyon, c’est oser avancer
+</Text>}
+    </>
   );
 }

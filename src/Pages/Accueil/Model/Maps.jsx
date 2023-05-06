@@ -1,6 +1,7 @@
-import { useGLTF } from "@react-three/drei";
+import { Text, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
+import { useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 
@@ -31,9 +32,26 @@ export function Maps(props) {
    
   });
 
+  const [showText, setShowText] = useState(false);
+
+  const handleMouseEnter = () => {
+    gsap.to(mapRef.current.scale, { duration: 0.2, x: 1.7, y: 1.7, z: 1.7 });
+
+    setShowText(true);
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(mapRef.current.scale, { duration: 0.2, x: 1.3, y: 1.3, z: 1.3 });
+
+    setShowText(false);
+  };
+
     return (
     
-       <group {...props} dispose={null} ref={mapRef}>
+      <>
+       <group {...props} dispose={null} ref={mapRef}  
+       onPointerEnter={handleMouseEnter}
+       onPointerLeave={handleMouseLeave}>
         <mesh
         castShadow
           geometry={nodes.Plane.geometry}
@@ -391,7 +409,14 @@ export function Maps(props) {
           rotation={[Math.PI / 2, 0, 3.03]}
           scale={0}
         />
+
       </group>
+      
+{showText &&<Text position={[13, -6, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} fontSize={.5} font={'Arial'}>
+Pour répondre à vos besoins
+</Text>}
+      </>
+      
     
     );
   }

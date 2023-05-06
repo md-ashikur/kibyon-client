@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import marketStudy from "../../Videos/Market study.mp4";
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -133,7 +133,7 @@ const OfferSecTwo = () => {
           <div class="spacer"></div>
 
           <video class="marketStudy">
-            <source src={marketStudy} type="video/mp4" />
+            <source src="" type="video/mp4" />
           </video>
         </div>
       </section>

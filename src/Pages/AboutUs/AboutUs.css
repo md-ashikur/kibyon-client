@@ -3,36 +3,4 @@ html {
   }
 
   
-  /* set the height of the container */
-.aa {
-    height: 100%;
-  cursor: none;
-  background-color: #000;
-  color: #fff;
-}
-
-
-/* style for cursor */
-.cursor {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  border-radius: 50%;
-  top: calc(var(--y) - 40px);
-  left: calc(var(--x) - 40px);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  mix-blend-mode: difference;
-  transition: background-color 0.3s ease-out;
-}
-
-.circleBig:hover .cursor{
-  transform: scale(1.5);
-}
-
-/* set cursor position using custom properties */
-:root {
-  --x: 0;
-  --y: 0;
-}
+  

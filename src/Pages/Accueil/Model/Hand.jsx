@@ -1,41 +1,34 @@
-import { useAnimations, useGLTF } from "@react-three/drei"
+import { Text, useAnimations, useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
 
 export function Hand(props) {
-  const group = useRef();
-    const { nodes, materials, animations } = useGLTF('/Models/handSewing.glb')
-    const { actions } = useAnimations(animations, group)
-
-    
  
+    const { nodes, materials, animations } = useGLTF('/Models/handSewing.glb')
+    const { actions } = useAnimations(animations)
 
+const handRef = useRef();
 
+const [showText, setShowText] = useState(false);
 
-const handGroupRef = useRef();
-const [hovered, setHovered] = useState(false);
+const handleMouseEnter = () => {
+  gsap.to(handRef.current.scale, { duration: 0.2, x: 1.7, y: 1.7, z: 1.7 });
 
-useEffect(() => {
-  if (hovered) {
-    gsap.to(handGroupRef.current.position, {
-      y: -0.5,
-      blur: 5,
-      opacity:0.4,
-      duration: 0.5,
-    });
-  } else {
-    gsap.to(handGroupRef.current.position, {
-      z: 0,
-      blur: 0,
-      duration: 0.5,
-    });
-  }
-}, [hovered]);
+  setShowText(true);
+};
+
+const handleMouseLeave = () => {
+  gsap.to(handRef.current.scale, { duration: 0.2, x: 1.3, y: 1.3, z: 1.3 });
+
+  setShowText(false);
+};
 
     return (
-      <group ref={group} {...props} dispose={null}>
-        <group ref={handGroupRef} name="Scene" onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
+     <>
+      <group ref={handRef} {...props} dispose={null} onPointerEnter={handleMouseEnter}
+       onPointerLeave={handleMouseLeave}>
+        <group name="Scene">
          
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.04}>
             <group name="10d303afd96646438dfea7a6b7c7c561fbx" rotation={[Math.PI / 2, 0, 0]}>
@@ -61,6 +54,10 @@ useEffect(() => {
         
         </group>
       </group>
+      {showText &&<Text position={[6, -6, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} fontSize={.5} font={'Arial'}>
+      Un conseil personnalisé et adapté
+</Text>}
+      </>
     )
   }
   
